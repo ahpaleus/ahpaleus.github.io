@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Nunito Sans' rel='stylesheet'>
+
+<style>
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+
+
+
+body {
+	line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+nav ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+a {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+	background-color: #ff9;
+	color: #000;
+	text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+	background-color: #ff9;
+	color: #000;
+	font-style: italic;
+	font-weight: bold;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #cccccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+input,
+select {
+	vertical-align: middle;
+}
+
+/* end css reset */
+
+
+
+/* font import from Adobe - currently loaded in header.php */
+
+/* @import url("https://use.typekit.net/abd7hms.css"); */
+
+#wp-admin-bar-updates {
+	display: none
+}
+
+/* global styles */
+
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	font-family: nunito-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	background-color: #ffffff;
+	color: #333;
+	font-size: 18px;
+	line-height: 1.25em;
+	font-weight: 300;
+}
+
+p,
+ul li,
+ol li {
+	line-height: 1.5em;
+	margin-bottom: 1em;
+	text-align: justify;
+}
+
+p.inactive {
+	color: #aaa;
+}
+
+a:link,
+a:visited,
+a:hover {
+	color: #333;
+	text-decoration: none;
+	border: none;
+	-webkit-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	-ms-transition: all .3s linear;
+	-o-transition: all .3s linear;
+	transition: all .3s linear;
+}
+
+a:hover {
+	color: #aaa;
+}
+
+/* heading styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 300;
+	text-align: center;
+	line-height: 1.25;
+}
+
+h2 {
+	font-size: 2em;
+	margin: 2.5em 0;
+	text-align: center;
+}
+
+.join-cta h2, .subscribe-cta {
+	font-weight: 400;
+}
+
+/* subtitles */
+h3 {
+	font-size: 1.5em;
+	margin: 2em 0 1em 0;
+	text-align: center;
+}
+
+h4 {
+	font-size: 1em;
+}
+
+/* used for "edit" link only visible to site owner/writers */
+h5 {
+	margin: 2.5em 0;
+}
+
+/* author credits */
+h6 {
+	font-size: 1.2em;
+	line-height: 1.3em;
+	margin: 1em 0 .5em 0;
+	letter-spacing: .1em;
+	margin-bottom: 1em;
+	text-align: center;
+	-webkit-opacity: 0.30;
+	-moz-opacity: 0.30;
+	opacity: 0.30;
+	-webkit-transition: opacity 3s linear;
+	-moz-transition: opacity 3s linear;
+	-ms-transition: opacity 3s linear;
+	-o-transition: opacity 3s linear;
+	transition: opacity 3s linear;
+}
+
+/* fades author credit back in on hover */
+h6:hover {
+	-webkit-opacity: 1;
+	-moz-opacity: 1;
+	opacity: 1;
+	-webkit-transition: all 2s ease;
+	-moz-transition: all 2s ease;
+	-ms-transition: all 2s ease;
+	-o-transition: all 2s ease;
+	transition: all 2s ease;
+}
+
+h6 strong {
+	font-weight: 400;
+}
+
+img,
+img a {
+	border: 0;
+	padding: 3px;
+}
+
+
+/* container for body */
+.container {
+	overflow: hidden;
+	max-width: 32em;
+	margin: 0 auto;
+	padding: 0 2.5em;
+}
+
+/* wider container for header and footer elements */
+.wide-container {
+	max-width: 70em;
+	margin: 0 auto;
+	padding: 0 2.5em;
+	overflow: hidden;
+}
+
+
+/* header and navigation */
+header .wide-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
+	flex-wrap: nowrap;
+	height: 100px;
+}
+
+header {
+	border-bottom: 1px solid #f5f5f5;
+	text-transform: lowercase;
+}
+
+header .wide-container .title {
+	width: 20%;
+}
+
+header .wide-container .header-nav {
+	width: 60%;
+}
+
+header .wide-container .byline {
+	width: 20%;
+}
+
+header .header-nav .menu {
+	text-align: center;
+}
+
+header .header-nav .menu li {
+	display: inline;
+	padding: 0 15px;
+}
+
+header .header-nav .menu li a {
+	color: #777;
+}
+
+header .header-nav .menu li a:hover {
+	color: #333;
+}
+
+header .title a#tagline,
+header .byline h1 {
+	text-transform: lowercase;
+	color: #aaa;
+}
+
+header .title h1 a {
+	font-weight: 400;
+}
+
+header .title h1 {
+	text-align: left;
+}
+
+header .byline h1 {
+	font-weight: 300;
+	text-align: right;
+}
+
+header .byline h1 a,
+header .byline h1 a:visited {
+	color: #aaa;
+}
+
+header .byline h1 a:hover {
+	color: #333;
+}
+
+/* footer product cards and links */
+footer {
+	text-align: center;
+	background-color: #f5f5f5;
+	padding: 2.5em 0;
+}
+
+footer h1 {
+	font-size: 1.5em;
+}
+
+footer h1.grey {
+	color: #aaa;
+}
+
+footer h2 {
+	font-size: 1em;
+}
+
+footer .product-cards {
+	padding: 2.5em 0;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
+footer a .product-card {
+	background: #fff;
+	padding: 45px 30px;
+	-webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.10);
+	-moz-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.10);
+	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.10);
+	-webkit-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	-ms-transition: all .3s linear;
+	-o-transition: all .3s linear;
+	transition: all .3s linear;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	min-height: 8em;
+	min-width: 16em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+footer a:hover .product-card {
+	-webkit-box-shadow: 0 30px 50px 0 rgba(0, 0, 0, 0.10);
+	-moz-box-shadow: 0 30px 50px 0 rgba(0, 0, 0, 0.10);
+	box-shadow: 0 30px 50px 0 rgba(0, 0, 0, 0.10);
+}
+
+footer .product-card>p {
+	margin-bottom: 0;
+}
+
+footer>.wide-container>.join-cta, .subscribe-cta {
+	margin-bottom: 2.5em;
+}
+
+footer>.wide-container>.join-cta h2, .subscribe-cta h2 {
+	margin: 0;
+	padding-bottom: .5em;
+}
+
+footer>.wide-container>.join-cta>ul li {
+	display: inline;
+	padding: 0 15px;
+}
+
+footer>.wide-container>.join-cta>ul li a {
+	color: #777;
+	text-transform: lowercase;
+}
+
+footer nav.footer-menu a,
+footer nav.footer-menu a:visited {
+	color: #aaa;
+	text-transform: lowercase;
+}
+
+footer nav.footer-menu a:hover {
+	color: #333;
+}
+
+footer nav.footer-menu li {
+	margin-bottom: 0;
+}
+
+p.search-title {
+	text-align: center;
+	font-weight: 400;
+}
+
+form input.input-box {
+	width: 94%;
+	height: 30px;
+	font-size: 18px;
+	padding: 10px 15px;
+	border: 1px solid #ddd;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	-webkit-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	-ms-transition: all .3s linear;
+	-o-transition: all .3s linear;
+	transition: all .3s linear;
+}
+
+form input.input-box:hover {
+	border: 1px solid #aaa;
+}
+
+form input.input-box:focus {
+	outline: none;
+	border: 1px solid #333;
+}
+
+/* archive page */
+
+.results {
+	margin-bottom: 5em;
+}
+
+.year h2 {
+	margin-bottom: 0;
+}
+
+.day p,
+.month h4 {
+	font-weight: 400;
+}
+
+.month h4 {
+	margin: 2em 0 1em 0;
+}
+
+.day p,
+.post-title p {
+	margin-bottom: 0;
+}
+
+.day p {
+	padding-right: 60px;
+}
+
+.day-title {
+	display: flex;
+	align-items: flex-start;
+	border-bottom: 1px solid #eee;
+	padding: 10px 0;
+}
+
+/* post styles */
+
+.post h4 {
+	margin-bottom: 2.5em;
+	font-size: 14px;
+	color: #aaa;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+
+.post h4 a,
+.post h4 a:visited {
+	color: #aaa;
+	border-bottom: #fff;
+}
+
+.post h4 a:hover {
+	color: #333;
+}
+
+.post strong {
+	font-weight: 400;
+}
+
+.post a:link,
+.post a:visited {
+	text-decoration: none;
+	color: #333;
+	border-bottom: 2px solid #e2e2e2;
+	-webkit-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	-ms-transition: all .3s linear;
+	-o-transition: all .3s linear;
+	transition: all .3s linear;
+}
+
+.post a:hover {
+	border-color: #666666;
+}
+
+.post ul {
+	list-style-type: disc;
+	padding: .1em .0 0 1.1em;
+	margin-top: .5em;
+}
+
+.post ol {
+	list-style-type: decimal;
+	padding: .1em 0 0 1.2em;
+	margin-top: .5em;
+}
+
+.post blockquote {
+	border-left: 2px solid #e2e2e2;
+	margin: 2.5em 0;
+	padding: .8em 1.5em .2em 1.5em;
+}
+
+.post blockquote cite {
+	color: #aaa;
+	font-style: none;
+}
+
+/* line at bottom of post */
+.home_bottom {
+	border-bottom: 1px solid #f5f5f5;
+	font-size: 2em;
+	line-height: 2.5em;
+	color: #aaa;
+}
+
+/* previous & next posts at bottom */
+.navigation {
+	margin: 2.5em 0 5em 0;
+	display: flex;
+	flex-direction: row;
+}
+
+.navigation p {
+	color: #aaa;
+}
+
+.navigation p.previous-post,
+.navigation p.next-post {
+	width: 50%;
+	font-weight: 400;
+}
+
+.navigation p.next-post {
+	text-align: right;
+}
+
+/* subscription */
+.subscribe p {
+	text-transform: uppercase;
+	color: #666;
+	font-size: 1em;
+	letter-spacing: .2em;
+	font-weight: bold;
+	line-height: 2em;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+/* "see all posts" at bottom of home page */
+.all_posts h3 {
+	margin: 2.5em 0;
+}
+
+.all_posts h3 a,
+.all_posts h3 a:visited {
+	color: #aaa;
+}
+
+.all_posts h3 a:hover {
+	color: #333;
+}
+
+/* footer text */
+.footer p {
+	font-size: .8em;
+	letter-spacing: .2em;
+	text-transform: lowercase;
+	padding: 0;
+	margin: 0;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.footer a {
+	color: #666
+}
+
+/* for archives page */
+#arc {
+	overflow: hidden;
+	margin: 0 1em 2em .4em;
+}
+
+/* comments styling - not in use on site as comments disabled */
+
+ol.commentlist {
+	margin: 10px 0 20px 0;
+}
+
+.commentlist .comment-body {
+	padding: 30px;
+	background: #f5f5f5;
+	border: solid thin #f5f5f5;
+	margin: 10px 0;
+	position: relative;
+}
+
+.comment-body a.comment-reply-link {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	color: #333;
+}
+
+ol.commentlist li {
+	list-style: none;
+}
+
+ol.commentlist img.avatar {
+	padding: 10px;
+	background: #fff;
+	border: 1px solid #aaa;
+	float: left;
+	display: block;
+	margin: 0px 15px 5px 0px;
+	width: 30px;
+	height: 30px;
+}
+
+ol.commentlist .comment-author {
+	line-height: 25px;
+}
+
+.comment-body cite.fn {
+	font-style: normal;
+}
+
+.commentmetadata a {
+	margin: 0;
+	font-size: 14px;
+	color: #aaa;
+}
+
+.comment-body p {
+	margin: 5px;
+}
+
+.comment-body .comment-author.vcard {
+	margin: 0;
+}
+
+#respond form {
+	padding: 30px;
+	background: #f5f5f5;
+	border: solid thin #f5f5f5;
+	margin: 10px 0 5em 0;
+	text-align: center;
+}
+
+#respond form p.form-submit {
+	margin-bottom: 0;
+}
+
+#respond form label {
+	display: block;
+}
+
+#respond textarea {
+	width: 90%;
+	height: 60px;
+	font-size: 18px;
+	padding: 10px 15px;
+	border: 1px solid #aaa;
+	-webkit-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	-ms-transition: all .3s linear;
+	-o-transition: all .3s linear;
+	transition: all .3s linear;
+}
+
+/* for iPad-sized devices */
+@media only screen and (max-device-width: 1024px) {
+
+	.wide-container {
+		max-width: 70em;
+		margin: 0 auto;
+		padding: 0 1.5em;
+		overflow: hidden;
+	}
+
+	header .header-nav .menu li {
+		display: inline;
+		padding: 0 10px;
+	}
+
+	footer .product-cards {
+		flex-wrap: wrap;
+	}
+
+	footer a .product-card {
+		min-height: 6em;
+		min-width: 32em;
+		flex-direction: column;
+		margin-bottom: 1em;
+	}
+
+}
+
+/* for narrower browsers */
+@media screen and (max-width: 800px) {
+
+	.wide-container,
+	.container {
+		max-width: 70em;
+		margin: 0 auto;
+		padding: 0 1.5em;
+		overflow: hidden;
+	}
+
+	footer a .product-card {
+		min-width: 14em;
+	}
+
+	h2,
+	h3,
+	h3,
+	h5,
+	h6,
+	.month h4,
+	p.search-title {
+		text-align: left;
+	}
+
+	h2 {
+		font-size: 2em;
+		margin: 2em 0 1em 0;
+	}
+
+	.join-cta h2 {
+		text-align:center;
+	}
+
+}
+
+/* for iPhone-sized devices */
+@media only screen and (max-device-width: 480px) {
+	/* .container { width: 100% } */
+	h2, h3, h3, h5, h6, .month h4, p.search-title {
+		text-align:center;
+	}
+	header .wide-container .byline {
+		display:none;
+	}
+	header .wide-container {
+		flex-wrap: wrap;
+	}
+	header .wide-container .title {
+		width: 100%;
+	}
+	header .wide-container .header-nav {
+		width: 100%;
+	}
+	header .title h1 {
+		text-align: center;
+	}
+	header .header-nav .menu li {
+   		display: inline;
+  		padding: 0 5px;
+	}
+}
+
+@media print {
+	body {
+		font-family: Helvetica, sans-serif;
+		font-size: 14px;
+		background: white;
+		color: black;
+		margin: 10;
+		width: auto;
+	}
+
+	.container,
+	.wide-container {
+		display: block;
+	}
+
+	header .header-nav,
+	.all_posts,
+	.subscribe,
+	footer {
+		display: none;
+	}
+}
+
+
+/* Active Campaign Form Styling */
+
+#_form_1_ {
+	font-size: 16px;
+	/* line-height: 1.6; */
+	margin: 0;
+}
+
+#_form_1_ * {
+	outline: 0;
+}
+
+._form_hide {
+	display: none;
+	visibility: hidden;
+}
+
+._form_show {
+	display: block;
+	visibility: visible;
+}
+
+#_form_1_._form-top {
+	top: 0;
+}
+
+#_form_1_._form-bottom {
+	bottom: 0;
+}
+
+#_form_1_._form-left {
+	left: 0;
+}
+
+#_form_1_._form-right {
+	right: 0;
+}
+
+#_form_1_ input[type="text"],
+#_form_1_ input[type="date"],
+#_form_1_ textarea {
+	padding: 11px;
+	height: auto;
+	border: #fff 1px solid;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	color: #000 !important;
+	font-size: 16px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.10);
+	-moz-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.10);
+	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.10);
+	-webkit-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	-ms-transition: all .3s linear;
+	-o-transition: all .3s linear;
+	transition: all .3s linear;
+}
+
+#_form_1_._inline-style input[type="text"]:focus{
+	-webkit-box-shadow: 0 30px 50px 0 rgba(0, 0, 0, 0.10);
+	-moz-box-shadow: 0 30px 50px 0 rgba(0, 0, 0, 0.10);
+	box-shadow: 0 30px 50px 0 rgba(0, 0, 0, 0.10);
+}
+
+#_form_1_ textarea {
+	resize: none;
+}
+
+#_form_1_ ._submit {
+	-webkit-appearance: none;
+	cursor: pointer;
+	font-size: 16px;
+	text-align: center;
+	background: #d74685 !important;
+	border: 0 !important;
+	-moz-border-radius: 4px !important;
+	-webkit-border-radius: 4px !important;
+	border-radius: 4px !important;
+	color: #fff !important;
+	padding: 11px !important;
+	-webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.10);
+	-moz-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.10);
+	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.10);
+	-webkit-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	-ms-transition: all .3s linear;
+	-o-transition: all .3s linear;
+	transition: all .3s linear;
+}
+
+#_form_1_ ._close-icon {
+	cursor: pointer;
+	background-image: url('https://d226aj4ao1t61q.cloudfront.net/esfkyjh1u_forms-close-dark.png');
+	background-repeat: no-repeat;
+	background-size: 14.2px 14.2px;
+	position: absolute;
+	display: block;
+	top: 11px;
+	right: 9px;
+	overflow: hidden;
+	width: 16.2px;
+	height: 16.2px;
+}
+
+#_form_1_ ._close-icon:before {
+	position: relative;
+}
+
+#_form_1_ ._form-body {
+	margin-bottom: 30px;
+}
+
+#_form_1_ ._form-image-left {
+	width: 150px;
+	float: left;
+}
+
+#_form_1_ ._form-content-right {
+	margin-left: 164px;
+}
+
+#_form_1_ ._form-branding {
+	color: #fff;
+	font-size: 10px;
+	clear: both;
+	text-align: left;
+	margin-top: 30px;
+	font-weight: 100;
+}
+
+#_form_1_ ._form-branding ._logo {
+	display: block;
+	width: 130px;
+	height: 14px;
+	margin-top: 6px;
+	background-image: url('https://d226aj4ao1t61q.cloudfront.net/hh9ujqgv5_aclogo_li.png');
+	background-size: 130px auto;
+	background-repeat: no-repeat;
+}
+
+#_form_1_ ._form-label,
+#_form_1_ ._form_element ._form-label {
+	font-weight: bold;
+	margin-bottom: 5px;
+	display: block;
+}
+
+#_form_1_._dark ._form-branding {
+	color: #333;
+}
+
+#_form_1_._dark ._form-branding ._logo {
+	background-image: url('https://d226aj4ao1t61q.cloudfront.net/jftq2c8s_aclogo_dk.png');
+}
+
+#_form_1_ ._form_element {
+	position: relative;
+	margin-bottom: 10px;
+	font-size: 0;
+	max-width: 100%;
+}
+
+#_form_1_ ._form_element * {
+	font-size: 16px;
+}
+
+#_form_1_ ._form_element._clear {
+	clear: both;
+	width: 100%;
+	float: none;
+}
+
+#_form_1_ ._form_element._clear:after {
+	clear: left;
+}
+
+#_form_1_ ._form_element input[type="text"],
+#_form_1_ ._form_element input[type="date"],
+#_form_1_ ._form_element select,
+#_form_1_ ._form_element textarea:not(.g-recaptcha-response) {
+	display: block;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#_form_1_ ._field-wrapper {
+	position: relative;
+}
+
+#_form_1_ ._inline-style {
+	float: left;
+}
+
+#_form_1_ ._inline-style input[type="text"] {
+	/* width: 150px; */
+}
+
+#_form_1_ ._inline-style:not(._clear)+._inline-style:not(._clear) {
+	margin-left: 20px;
+}
+
+#_form_1_ ._form_element img._form-image {
+	max-width: 100%;
+}
+
+#_form_1_ ._clear-element {
+	clear: left;
+}
+
+#_form_1_ ._full_width {
+	width: 100%;
+}
+
+#_form_1_ ._form_full_field {
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+#_form_1_ input[type="text"]._has_error,
+#_form_1_ textarea._has_error {
+	border: #f37c7b 1px solid;
+}
+
+#_form_1_ input[type="checkbox"]._has_error {
+	outline: #f37c7b 1px solid;
+}
+
+#_form_1_ ._error {
+	display: block;
+	position: absolute;
+	font-size: 16px;
+	z-index: 10000001;
+}
+
+#_form_1_ ._error._above {
+	padding-bottom: 4px;
+	bottom: 39px;
+	right: 0;
+}
+
+#_form_1_ ._error._below {
+	padding-top: 4px;
+	top: 100%;
+	right: 0;
+}
+
+#_form_1_ ._error._above ._error-arrow {
+	bottom: 0;
+	right: 15px;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid #f37c7b;
+}
+
+#_form_1_ ._error._below ._error-arrow {
+	top: 0;
+	right: 15px;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid #f37c7b;
+}
+
+#_form_1_ ._error-inner {
+	padding: 8px 12px;
+	background-color: #525252;
+	font-size: 16px;
+	font-family: nunito-sans, arial, sans-serif;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+#_form_1_ ._error-inner._form_error {
+	margin-bottom: 5px;
+	text-align: left;
+}
+
+#_form_1_ ._button-wrapper ._error-inner._form_error {
+	position: static;
+}
+
+#_form_1_ ._error-inner._no_arrow {
+	margin-bottom: 10px;
+}
+
+#_form_1_ ._error-arrow {
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+
+#_form_1_ ._error-html {
+	margin-bottom: 10px;
+}
+
+.pika-single {
+	z-index: 10000001 !important;
+}
+
+@media all and (min-width:320px) and (max-width:667px) {
+	::-webkit-scrollbar {
+		display: none;
+	}
+
+	#_form_1_ {
+		margin: 0;
+		width: 100%;
+		min-width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
+	}
+
+	#_form_1_ * {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		font-size: 1em;
+	}
+
+	#_form_1_ ._form-content {
+		margin: 0;
+		width: 100%;
+	}
+
+	#_form_1_ ._form-inner {
+		display: block;
+		min-width: 100%;
+	}
+
+	#_form_1_ ._form-title,
+	#_form_1_ ._inline-style {
+		margin-top: 0;
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	#_form_1_ ._form-title {
+		font-size: 1.2em;
+	}
+
+	#_form_1_ ._form_element {
+		margin: 0 0 20px;
+		padding: 0;
+		width: 100%;
+	}
+
+	#_form_1_ ._form-element,
+	#_form_1_ ._inline-style,
+	#_form_1_ input[type="text"],
+	#_form_1_ label,
+	#_form_1_ p,
+	#_form_1_ textarea:not(.g-recaptcha-response),
+	#_form_1_ ._submit {
+		float: none;
+		display: block;
+		width: 100%;
+	}
+
+	#_form_1_ ._row._checkbox-radio label {
+		display: inline;
+	}
+
+	#_form_1_ ._row,
+	#_form_1_ p,
+	#_form_1_ label {
+		margin-bottom: 0.7em;
+		width: 100%;
+	}
+
+	#_form_1_ ._row input[type="checkbox"],
+	#_form_1_ ._row input[type="radio"] {
+		margin: 0 !important;
+		vertical-align: middle !important;
+	}
+
+	#_form_1_ ._row input[type="checkbox"]+span label {
+		display: inline;
+	}
+
+	#_form_1_ ._row span label {
+		margin: 0 !important;
+		width: initial !important;
+		vertical-align: middle !important;
+	}
+
+	#_form_1_ ._form-image {
+		max-width: 100%;
+		height: auto !important;
+	}
+
+	#_form_1_ input[type="text"] {
+		padding-left: 10px;
+		padding-right: 10px;
+		font-size: 1.2em;
+		line-height: 1.3em;
+		-webkit-appearance: none;
+	}
+
+	#_form_1_ input[type="radio"],
+	#_form_1_ input[type="checkbox"] {
+		display: inline-block;
+		width: 1.3em;
+		height: 1.3em;
+		font-size: 1em;
+		margin: 0 0.3em 0 0;
+		vertical-align: baseline;
+	}
+
+	#_form_1_ button[type="submit"] {
+		padding: 20px;
+		font-size: 1.2em;
+	}
+
+	#_form_1_ ._inline-style {
+		margin: 20px 0 0 !important;
+	}
+}
+
+#_form_1_ {
+	position: relative;
+	text-align: left;
+	margin: 1.25em auto 2.5em auto;
+	padding: 0px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	*zoom: 1;
+	background: #f5f5f5 !important;
+	border: 0px solid #b0b0b0 !important;
+	-moz-border-radius: 0px !important;
+	-webkit-border-radius: 0px !important;
+	border-radius: 0px !important;
+	color: #000 !important;
+}
+
+#_form_1_ ._form-title {
+	font-size: 18px;
+	line-height: 22px;
+	font-weight: 400;
+	margin-bottom: 0;
+}
+
+#_form_1_:before,
+#_form_1_:after {
+	content: " ";
+	display: table;
+}
+
+#_form_1_:after {
+	clear: both;
+}
+
+#_form_1_._inline-style {
+	width: auto;
+	display: inline-block;
+}
+
+#_form_1_._inline-style input[type="text"],
+#_form_1_._inline-style input[type="date"] {
+	padding: 10px 12px;
+}
+
+#_form_1_._inline-style button._inline-style {
+	position: relative;
+	top: 27px;
+}
+
+#_form_1_._inline-style p {
+	margin: 0;
+}
+
+#_form_1_._inline-style ._button-wrapper {
+	position: relative;
+	/* margin: 27px 12.5px 0 20px; */
+}
+
+#_form_1_ ._form-thank-you {
+	position: relative;
+	left: 0;
+	right: 0;
+	text-align: center;
+	font-size: 16px;
+}
+
+@media all and (min-width:320px) and (max-width:667px) {
+	#_form_1_._inline-form._inline-style ._inline-style._button-wrapper {
+		margin-top: 20px !important;
+		margin-left: 0 !important;
+	}
+}
+
+#_form_1_ ._submit {
+	font-family: nunito-sans, -apple-system, system-ui, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+#_form_1_ ._x11465611 ._form-title {
+	text-align: center;
+
+}
+
+#_form_1_ ._x71003473 input, #_form_1_ ._x44360788 input {
+	font-family: nunito-sans, -apple-system, system-ui, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+#_form_1_._form_1 {
+	font-family: nunito-sans, -apple-system, system-ui, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+._form-title {
+	padding-bottom:.5em;
+}
+</style>
+</head>
+
+
+<div class="container">
+<h2>
+
+<a href="https://maciejdomanski.com" rel="bookmark" title="Maciej Domanski">Maciej Domański</a>
+
+</h2>
+
+
+<div class="post">
+	<h4>Penetration Testing & Reverse Engineering</h4>
+<p>International cyber security consultant deeply focused on security research working for clients all around the world - especially for a wide range of top tier international banks to major tech companies. Also, during everyday routine has an opportunity to lead a team of penetration testers (<a href="https://afine.com" target="_blank">🇪🇺AFINE</a>). Capture The Flag (CTF) Player (<a href="https://ctftime.org/team/33893" target="_blank">@justCatTheFish</a>). Brazilian Jiu-Jitsu (BJJ) blue belt.
+</p>
+
+<p>From 09.2018 has an opportunity to conduct remote penetration tests, focusing on 🇦🇺 Australian market as a highly specialized freelancing services.</i>
+</p>
+
+<h3>Area of responsibility:</h3>
+<ul>
+	<li>Web applications security testing</li>
+	<li>Infrastructure penetration testing</li>
+	<li>Native applications & binary security</li>
+	<li>Software reverse-engineering</li>
+	<li>Social engineering</li>
+	<li>Vulnerability Research/Exploit Development</li>
+	<li>Conducting training on Cyber Security</li>
+</ul>
+<br /><br />
+
+<details>
+<summary>Advisories <i>(click to expand)</i>:</summary>
+<div class="results">
+<p>
+<ul>
+<div class="day-title">CVE-2020-25140 - Cross Site Scripting (Observium)</div>
+<div class="day-title">CVE-2020-25141 - Cross Site Scripting (Observium)</div>
+<div class="day-title">CVE-2020-25142 - Cross Site Request Forgery (CSRF) (Observium)</div>
+<div class="day-title">CVE-2020-25143 - SQL Injection (Observium)</div>
+<div class="day-title">CVE-2020-25144 - Authenticated Directory Traversal And Local File Inclusion (Observium)</div>
+<div class="day-title">CVE-2020-25145 - Authenticated Directory Traversal And Local File Inclusion (Observium)</div>
+<div class="day-title">CVE-2020-25146 - Cross Site Scripting (Observium)</div>
+<div class="day-title">CVE-2020-25147 - SQL Injection (Observium)</div>
+<div class="day-title">CVE-2020-25148 - Cross Site Scripting (Observium)</div>
+<div class="day-title">CVE-2020-25149 - Authenticated Directory Traversal And Local File Inclusion (Observium)</div>
+<div class="day-title">CVE-2020-25102 - Cross-Site Scripting (SilverStripe Advanced Reports Module)</div>
+<div class="day-title">CVE-2019-14521 - Remote Code Execution (Energy Logserver)</div>
+</ul>
+</p>
+</div>
+</details>
+
+
+<h3>More info:</h3>
+
+<ul>
+	<li><a href="https://github.com/ahpaleus" target="_blank">GitHub Portfolio</a></li>
+	<li><a href="https://github.com/ahpaleus/ahp_cheatsheet" target="_blank",>Research Notes</a></li>
+	<li><a href="https://www.linkedin.com/in/maciej-d-58173a150/" target="_blank">LinkedIn profile</a></li>
+	<li><a href="https://twitter.com/ahpaleus" target="_blank">Twitter account</a></li>
+	<li><a href="mailto:contact@maciejdomanski.com">Contact me</a> by e-mail (<a href="https://keys.openpgp.org/vks/v1/by-fingerprint/D8FB1852D23AE7C152B4575EF5CCD5ADE3832AAE">PGP key</a>)</li>
+</ul>
+
+
+</div>
+</div>
+
+</body>
+</html>
